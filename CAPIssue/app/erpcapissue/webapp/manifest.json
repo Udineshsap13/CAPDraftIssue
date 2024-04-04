@@ -1,0 +1,176 @@
+{
+  "_version": "1.45.0",
+  "sap.app": {
+    "id": "erpcapissue.erpcapissue",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.7.5",
+      "toolsId": "ba49062e-48bc-4559-ba44-92addfea55c5"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "odata/v4/businesspartner/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.108.7",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "erpcapissue.erpcapissue.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "BusinessPartnerList",
+          "target":[
+            "BusinessPartnerList"
+          ]
+        },
+        {
+          "pattern": "BusinessPartner({key}):?query:",
+          "name": "BusinessPartnerObjectPage",
+          "target": [
+            "BusinessPartnerList",
+            "BusinessPartnerObjectPage"
+          ]
+        }
+      ],
+      "targets": {
+        "BusinessPartnerList": {
+          "type": "Component",
+          "id": "BusinessPartnerList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "entitySet": "BusinessPartner",
+              "initialLoad": "Enabled",
+              "variantManagement": "Page",
+              "navigation": {
+                "BusinessPartner": {
+                  "detail": {
+                    "route": "BusinessPartnerObjectPage"
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
+        },
+        "BusinessPartnerObjectPage": {
+          "type": "Component",
+          "id": "BusinessPartnerObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "entitySet": "BusinessPartner",
+              "sectionLayout": "Tabs"
+            }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/BusinessPartner({key})"
+        }
+      },
+      "config": {
+          "flexibleColumnLayout": {
+              "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+              "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+          },
+          "routerClass": "sap.f.routing.Router"
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "rootView": {
+        "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+        "type": "XML",
+        "async": true,
+        "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },  
+  "sap.cloud": {
+      "public": true,
+      "service": "awa.dom.ui"
+  },
+  "sap.platform.cf": {
+      "ui5VersionNumber": "1.117.0"
+  }
+}
