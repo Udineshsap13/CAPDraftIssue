@@ -32,6 +32,12 @@ annotate service.BusinessPartner with @(
         ],
         Facets  : [
             {
+                $Type  : 'UI.ReferenceFacet',
+                Label  : '{i18n>GeneralInformation}',
+                ID     : 'CorrespondenceTemplateConfigurationProperties',
+                Target : '@UI.FieldGroup#HeaderGeneralInformation'
+            },
+            {
             $Type  : 'UI.ReferenceFacet',
             Label  : '{i18n>Addresses}',
             ID     : 'Addresses',
@@ -40,7 +46,8 @@ annotate service.BusinessPartner with @(
         ],
         FieldGroup #HeaderGeneralInformation : {
             Data : [
-                { Value : Name, Label : '{i18n>Name}' }
+                { Value : Name, Label : '{i18n>Name}' },
+                { Value : ObjectID, Label : '{i18n>ObjectID}' }
             ]
         }
     }
@@ -51,6 +58,10 @@ annotate service.BusinessPartnerIPDataOurTeam with @(UI: {
         {
             $Type            : 'UI.DataField',
             Value            : Title,
+        },
+        {
+            $Type            : 'UI.DataField',
+            Value            : ObjectID,
         }
     ]
 });
