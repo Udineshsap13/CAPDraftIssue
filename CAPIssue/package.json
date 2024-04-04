@@ -7,7 +7,8 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7.0.2",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.108.26",

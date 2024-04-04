@@ -19,8 +19,10 @@ annotate service.BusinessPartner with @(
         ],
         HeaderInfo : {
             TypeImageUrl   : '',
+            TypeName : 'BusinessPartner',
+            TypeNamePlural : 'BusinessPartners',
             Title          : {Value : UUID},
-            Description    : {Value : Description}
+            Description    : {Value : Name}
         },
         HeaderFacets                         : [
             {
@@ -38,11 +40,17 @@ annotate service.BusinessPartner with @(
                 Target : '@UI.FieldGroup#HeaderGeneralInformation'
             },
             {
-            $Type  : 'UI.ReferenceFacet',
-            Label  : '{i18n>Addresses}',
-            ID     : 'Addresses',
-            Target : 'OurTeams/@UI.LineItem',
-        },
+                $Type  : 'UI.ReferenceFacet',
+                Label  : '{i18n>DirectRelation}',
+                ID     : 'DirectRelation',
+                Target : 'OurTeams/@UI.LineItem',
+            },
+            {
+                $Type  : 'UI.ReferenceFacet',
+                Label  : '{i18n>ChainedRelation}',
+                ID     : 'ChainedRelation',
+                Target : 'IPData/OurTeams/@UI.LineItem',
+            },
         ],
         FieldGroup #HeaderGeneralInformation : {
             Data : [

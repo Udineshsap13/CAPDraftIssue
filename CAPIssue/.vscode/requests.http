@@ -1,0 +1,4 @@
+POST http://localhost:4004/odata/v4/businesspartner/BusinessPartner(17417542-a02f-46da-8ccd-7c9fdec3e249)/IPData/OurTeams
+Content-Type: application/json
+
+{}

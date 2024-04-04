@@ -5,7 +5,7 @@ entity BusinessPartner {
     ObjectID : String; 
     Name : String;
     IPData: Composition of BusinessPartnerIPData on IPData.BusinessPartnerUUID = UUID;
-    OurTeams: Composition of many BusinessPartnerIPDataOurTeam on OurTeams.ParentObjectID = ObjectID;
+    OurTeams: Composition of many BusinessPartnerIPDataOurTeam on OurTeams.ParentUUID = UUID;
 };
 
 entity BusinessPartnerIPData {
@@ -14,7 +14,7 @@ entity BusinessPartnerIPData {
     ParentObjectID : String;
     BusinessPartnerUUID: UUID;
     Title: String;
-    OurTeams: Composition of many BusinessPartnerIPDataOurTeam on OurTeams.ParentUUID = UUID;
+    OurTeams: Composition of many BusinessPartnerIPDataOurTeam on OurTeams.ParentObjectID = ObjectID;
 };
 
 entity BusinessPartnerIPDataOurTeam {
