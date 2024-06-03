@@ -121,6 +121,13 @@
                     "route": "BusinessPartnerObjectPage"
                   }
                 }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "type": "GridTable",
+                  "selectionMode": "Multi",
+                  "selectAll": true
+                }
               }
             }
           }

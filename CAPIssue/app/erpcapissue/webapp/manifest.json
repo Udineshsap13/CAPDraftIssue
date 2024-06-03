@@ -55,7 +55,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.108.7",
+      "minUI5Version": "1.123.2",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -122,6 +122,13 @@
                     "route": "BusinessPartnerObjectPage"
                   }
                 }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "GridTable"
+                  }
+                }
               }
             }
           },
@@ -145,8 +152,7 @@
       },
       "config": {
           "flexibleColumnLayout": {
-              "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
-              "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+              "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded"
           },
           "routerClass": "sap.f.routing.Router"
       }
