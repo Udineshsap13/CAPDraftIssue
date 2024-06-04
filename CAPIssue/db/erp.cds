@@ -24,3 +24,18 @@ entity BusinessPartnerIPDataOurTeam {
     ParentUUID : UUID;
     Title: String;
 };
+
+entity Table1 {
+    key ID: String;
+    Name: String;
+};
+entity Table2 {
+    key ID: String;
+    Name: String;
+};
+
+entity TableMessageView {
+    key ID: String;
+    type: String;
+    title: String;
+};

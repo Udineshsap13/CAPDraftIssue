@@ -55,7 +55,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.123.2",
+      "minUI5Version": "1.99.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -122,13 +122,6 @@
                     "route": "BusinessPartnerObjectPage"
                   }
                 }
-              },
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "tableSettings": {
-                    "type": "GridTable"
-                  }
-                }
               }
             }
           },
@@ -143,7 +136,17 @@
             "settings": {
               "editableHeaderContent": false,
               "entitySet": "BusinessPartner",
-              "sectionLayout": "Tabs"
+              "sectionLayout": "Tabs",
+              "content": {
+                "header": {
+                  "actions": {
+                    "MessageView": {
+                      "press": "erpcapissue.erpcapissue.scripts.handler.onMessageView",
+                      "text": "{i18n>MessageView}"
+                    }
+                  }
+                }
+              }
             }
           },
           "controlAggregation": "midColumnPages",
