@@ -4,64 +4,70 @@ Copyright (C) 2021, AWA Holding Group
 All Rights Reserved 
 -->
 <core:FragmentDefinition
-   xmlns="sap.m"
-   xmlns:core="sap.ui.core" 
-   xmlns:form="sap.ui.layout.form"
-   xmlns:smart="sap.ui.comp.navpopover">
-   <Dialog
-      title="Test" contentHeight="50%" contentWidth="50%" id="idDryrun"
-      core:require="{handler: 'erpcapissue/erpcapissue/scripts/handler'}"
-      resizable="true">
-      <!-- Successor -->
-        <!-- <Table items="{/Table1}" class="sapUiSmallMargin">
-            <columns>
-                <Column>
-                    <Text text="ID" />
-                </Column>
-                <Column>
-                    <Text text="Name" />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem>
-                    <cells>
-                        <Text text="{ID}"/>
-                        <Text text="{Name}"/>       
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
-        <Table items="{/Table2}" class="sapUiSmallMargin">
-            <columns>
-                <Column>
-                    <Text text="ID" />
-                </Column>
-                <Column>
-                    <Text text="Name" />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem>
-                    <cells>
-                        <Text text="{ID}"/>
-                        <Text text="{Name}"/>       
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table> -->
-        <MessageView items="{/TableMessageView}" groupItems="true" id="idMessage">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:smart="sap.ui.comp.navpopover">
+    <Dialog
+        title="Test" contentHeight="50%" contentWidth="50%" id="idDryrun"
+        core:require="{handler: 'erpcapissue/erpcapissue/scripts/handler'}"
+        resizable="true">
+        <Page enableScrolling="true" title="Title">
+            <!-- Successor -->
+            <Table items="{/Table1}" class="sapUiSmallMargin">
+                <columns>
+                    <Column>
+                        <Text text="ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{ID}" />
+                            <Text text="{Name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Table items="{/Table2}" class="sapUiSmallMargin">
+                <columns>
+                    <Column>
+                        <Text text="ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{ID}" />
+                            <Text text="{Name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Page enableScrolling="true" title="Title">
+                <content>
+                    <MessageView items="{/TableMessageView}" groupItems="true" id="idMessage">
 
-            <MessageItem
-                type="{type}"
-                title="{title}"
-                subtitle="{title}"
-                description="{title}"
-                groupName="{type}">
-            </MessageItem>
-        </MessageView>
+                        <MessageItem
+                            type="{type}"
+                            title="{title}"
+                            subtitle="{title}"
+                            description="{title}"
+                            groupName="{type}">
+                        </MessageItem>
+                    </MessageView>
+                </content>
+            </Page>
+        </Page>
         <endButton>
-            <Button 
-            text="Cancel" press="handler.onCancel"/>
-        </endButton>         
-   </Dialog>
+            <Button
+                text="Cancel" press="handler.onCancel" />
+        </endButton>
+    </Dialog>
 </core:FragmentDefinition>
